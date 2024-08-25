@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+    <title>Suggestions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://png.pngtree.com/thumb_back/fh260/background/20230605/pngtree-person-is-sitting-on-a-platform-in-meditation-on-a-lake-image_2912256.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            margin: 100px auto;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .suggestion {
+            font-size: 1.5em;
+            margin: 20px 0;
+            text-align: left;
+        }
+        .details {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .gif {
+            margin: 20px 0;
+        }
+        .gif img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-size: 1.2em;
+            display: block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Suggestions for You</h1>
+        <div class="gif">
+            <!-- Random GIF from Giphy API or other source -->
+            <img src="https://i.pinimg.com/originals/99/9b/42/999b42f283fdfb69db7ac12ce1481cdb.gif" alt="Random GIF">
+        </div>
+        <div class="suggestion">
+            <div>{{ suggestion.text }}</div>
+            <div class="details">{{ suggestion.details }}</div>
+        </div>
+        <form method="post" action="{{ url_for('home') }}">
+            <label for="mood">Enter your mood:</label>
+            <input type="text" name="mood" id="mood" placeholder="How are you feeling?" required>
+            <button type="submit">Get Suggestion</button>
+        </form>
+        <a href="{{ url_for('profile') }}">Profile</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+</body>
+</html>
