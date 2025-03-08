@@ -32,17 +32,14 @@ The Flask Mood Tracker is a web application built with Flask that allows users t
 3.**Activate the Virtual Environment**
   venv\Scripts\activate
   
-4.**Inatall flask**
+4.**Install flask**
   pip install flask
   
 5.**Running the application**
   >Start the Flask Development Server
     python app.py
   >Access the Application
-    Open your web browser and navigate to:
-      http://127.0.0.1:5000
-
-
+   
 **Usage**
 >Home Page: Submit your mood to receive tailored suggestions.
 >Register: Create a new user account.
