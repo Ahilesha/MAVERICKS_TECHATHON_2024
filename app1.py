@@ -300,7 +300,6 @@ def forgot_password():
             token = str(random.randint(100000, 999999))
             password_reset_tokens[token] = email
             flash("Password reset link has been sent to your email.")
-            # In a real application, you would send an email with the reset link
         else:
             flash("Email not found.")
     return render_template("forgot_password.html")
