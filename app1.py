@@ -4,13 +4,13 @@ import random
 import re
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key_here'  # Replace with a real secret key
+app.secret_key = 'your_secret_key_here'  
 
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
 
-# Sample user data (in a real app, this would come from a database)
+
 users = {}
 user_passwords = {}
 password_reset_tokens = {}
@@ -23,11 +23,9 @@ class User(UserMixin):
 def load_user(user_id):
     return User(user_id) if user_id in users else None
 
-# Sample suggestion data
 def get_suggestions(mood):
     mood = mood.lower()
     suggestions = {
-        # Example for some moods, add others as needed
         "fear": {
             "text": "😨 **Face Your Fear**",
             "details": "🌟 Acknowledge what scares you and try to face it in a controlled and safe manner. Breaking it down into manageable steps can help.",
@@ -238,7 +236,7 @@ def get_suggestions(mood):
             "details": "🌹 Love is about connection. Spend time with loved ones and show appreciation for them. It's also important to practice self-love.",
             "action": "💌 Write a heartfelt note or plan a special activity for someone you care about."
         }
-        # Add more moods as needed
+
     }
     return suggestions.get(mood, {
         "text": "🤔 **Unknown Mood**: We're not sure how to help with this mood.",
